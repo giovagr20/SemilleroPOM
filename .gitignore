@@ -1,0 +1,8 @@
+## Remove files
+
+.idea/
+.gradle/
+build/
+gradle/
+history/
+target/
