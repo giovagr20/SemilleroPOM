@@ -14,12 +14,14 @@ public class RegistrarCompradorPageObject extends PageObject {
     private By inpCodigoPostal = By.id("mn_zipCode");
     private By inpClave = By.id("mn_password");
     private By lnkLogo = By.xpath("//*[@class ='mn_logo']");
+    private By btnRegistrar = By.xpath("//input[contains(., ''Sign Up')]");
+    private By txtMensajeValidacion = By.xpath("//h2[contains(.,'Welcome')]");
 
     public RegistrarCompradorPageObject() {
         super();
     }
 
-    public RegistrarCompradorPageObject(By inpNumeroAadvantage, By inpEmail, By inpNombre, By inpApellidos, By inpCodigoPostal, By inpClave, By lnkLogo) {
+    public RegistrarCompradorPageObject(By inpNumeroAadvantage, By inpEmail, By inpNombre, By inpApellidos, By inpCodigoPostal, By inpClave, By lnkLogo, By btnRegistrar, By txtMensajeValidacion) {
         this.inpNumeroAadvantage = inpNumeroAadvantage;
         this.inpEmail = inpEmail;
         this.inpNombre = inpNombre;
@@ -27,6 +29,8 @@ public class RegistrarCompradorPageObject extends PageObject {
         this.inpCodigoPostal = inpCodigoPostal;
         this.inpClave = inpClave;
         this.lnkLogo = lnkLogo;
+        this.btnRegistrar = btnRegistrar;
+        this.txtMensajeValidacion = txtMensajeValidacion;
     }
 
     public By getInpNumeroAadvantage() {
@@ -83,5 +87,21 @@ public class RegistrarCompradorPageObject extends PageObject {
 
     public void setLnkLogo(By lnkLogo) {
         this.lnkLogo = lnkLogo;
+    }
+
+    public By getBtnRegistrar() {
+        return btnRegistrar;
+    }
+
+    public void setBtnRegistrar(By btnRegistrar) {
+        this.btnRegistrar = btnRegistrar;
+    }
+
+    public By getTxtMensajeValidacion() {
+        return txtMensajeValidacion;
+    }
+
+    public void setTxtMensajeValidacion(By txtMensajeValidacion) {
+        this.txtMensajeValidacion = txtMensajeValidacion;
     }
 }

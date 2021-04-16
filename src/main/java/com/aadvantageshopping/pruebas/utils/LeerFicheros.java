@@ -23,7 +23,7 @@ public class LeerFicheros {
         this.campo = campo;
     }
 
-    public double leerDatoExcel(String hoja, String ruta, int valorColumna, int valorFila) throws IOException {
+    public double leerDatoExcelNumerico(String hoja, String ruta, int valorColumna, int valorFila) throws IOException {
         double value = 0;
         campo = new FileInputStream(new File(ruta));
         workbook = new XSSFWorkbook(campo);
@@ -31,6 +31,16 @@ public class LeerFicheros {
         Row row = sheet.getRow(valorFila);
         Cell cell = row.getCell(valorColumna);
         value = cell.getNumericCellValue();
+        return value;
+    }
+
+    public String leerDatoExcelCaracter(String hoja, String ruta, int valorColumna, int valorFila) throws IOException {
+        campo = new FileInputStream(new File(ruta));
+        workbook = new XSSFWorkbook(campo);
+        Sheet sheet = workbook.getSheet(hoja);
+        Row row = sheet.getRow(valorFila);
+        Cell cell = row.getCell(valorColumna);
+        String value = cell.getStringCellValue();
         return value;
     }
 

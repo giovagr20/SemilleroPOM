@@ -22,10 +22,16 @@ public class RegistrarCompradorStepDefinition {
     @Cuando("^el usuario ingresa los datos de registro$")
     public void elUsuarioIngresaLosDatosDeRegistro() throws IOException {
         registrarCompradorStep.ingresarCodigoAadvantage();
+        registrarCompradorStep.ingresarEmail();
+        registrarCompradorStep.ingresarNombre();
+        registrarCompradorStep.ingresarApellido();
+        registrarCompradorStep.ingresarCodigoPostal();
+        registrarCompradorStep.ingresarClave();
+        registrarCompradorStep.clickRegistrar();
     }
 
     @Entonces("^el usuario valida el registro exitoso$")
-    public void elUsuarioValidaElRegistroExitoso() {
+    public void elUsuarioValidaElRegistroExitoso() throws IOException{
+        registrarCompradorStep.validarRegistro();
     }
-
 }
